@@ -14,7 +14,7 @@ import Layout from "@/components/Layout";
 
 const transformationTimeline = [
   {
-    year: "2020",
+    year: "2024",
     title: "The Beginning",
     description: "Started my fitness journey at 85kg",
   },
