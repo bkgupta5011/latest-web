@@ -114,7 +114,7 @@ const Footer = () => {
         <div className="mt-12 pt-8 border-t border-border text-center text-sm text-muted-foreground">
           <p>
             &copy; {new Date().getFullYear()} TheFitBhaskar. All rights
-            reserved. Built with passion for fitness.
+            reserved. Built with passion for fitness 💌
           </p>
         </div>
       </div>
