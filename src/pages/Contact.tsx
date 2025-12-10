@@ -5,7 +5,15 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { Youtube, Instagram, Mail, Send, Loader2, MessageSquare, MapPin } from "lucide-react";
+import {
+  Youtube,
+  Instagram,
+  Mail,
+  Send,
+  Loader2,
+  MessageSquare,
+  MapPin,
+} from "lucide-react";
 
 const Contact = () => {
   const [submitting, setSubmitting] = useState(false);
@@ -45,15 +53,17 @@ const Contact = () => {
       icon: Instagram,
       name: "Instagram",
       handle: "@thefitbhaskar",
-      url: "#",
-      color: "bg-pink-500/20 text-pink-400 hover:bg-gradient-to-br hover:from-purple-500 hover:to-pink-500 hover:text-white",
+      url: "https://www.instagram.com/thefitbhaskar/",
+      color:
+        "bg-pink-500/20 text-pink-400 hover:bg-gradient-to-br hover:from-purple-500 hover:to-pink-500 hover:text-white",
     },
     {
       icon: Mail,
       name: "Email",
       handle: "contact@thefitbhaskar.com",
       url: "mailto:contact@thefitbhaskar.com",
-      color: "bg-primary/20 text-primary hover:bg-primary hover:text-primary-foreground",
+      color:
+        "bg-primary/20 text-primary hover:bg-primary hover:text-primary-foreground",
     },
   ];
 
@@ -76,47 +86,63 @@ const Contact = () => {
 
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div>
-                  <label className="block text-sm font-medium mb-2">Your Name</label>
+                  <label className="block text-sm font-medium mb-2">
+                    Your Name
+                  </label>
                   <Input
                     type="text"
                     placeholder="Enter your name"
                     value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, name: e.target.value })
+                    }
                     required
                     className="bg-background"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium mb-2">Email Address</label>
+                  <label className="block text-sm font-medium mb-2">
+                    Email Address
+                  </label>
                   <Input
                     type="email"
                     placeholder="Enter your email"
                     value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, email: e.target.value })
+                    }
                     required
                     className="bg-background"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium mb-2">Subject</label>
+                  <label className="block text-sm font-medium mb-2">
+                    Subject
+                  </label>
                   <Input
                     type="text"
                     placeholder="What's this about?"
                     value={formData.subject}
-                    onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, subject: e.target.value })
+                    }
                     required
                     className="bg-background"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium mb-2">Message</label>
+                  <label className="block text-sm font-medium mb-2">
+                    Message
+                  </label>
                   <Textarea
                     placeholder="Type your message here..."
                     value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, message: e.target.value })
+                    }
                     required
                     rows={5}
                     className="bg-background resize-none"
@@ -150,7 +176,7 @@ const Contact = () => {
               {/* Social Links */}
               <div className="bg-card rounded-xl border border-border p-8">
                 <h3 className="font-display text-2xl mb-6">Connect With Me</h3>
-                
+
                 <div className="space-y-4">
                   {socialLinks.map((social) => (
                     <a
@@ -163,7 +189,9 @@ const Contact = () => {
                       <social.icon className="w-6 h-6" />
                       <div>
                         <div className="font-medium">{social.name}</div>
-                        <div className="text-sm opacity-80">{social.handle}</div>
+                        <div className="text-sm opacity-80">
+                          {social.handle}
+                        </div>
                       </div>
                     </a>
                   ))}
@@ -182,10 +210,14 @@ const Contact = () => {
                   </div>
                 </div>
                 <p className="text-muted-foreground mb-6">
-                  Watch workout tutorials, diet tips, transformation vlogs, and more on my YouTube channel. 
-                  Subscribe and join the fitness journey!
+                  Watch workout tutorials, diet tips, transformation vlogs, and
+                  more on my YouTube channel. Subscribe and join the fitness
+                  journey!
                 </p>
-                <Button asChild className="w-full bg-red-500 hover:bg-red-600 text-white">
+                <Button
+                  asChild
+                  className="w-full bg-red-500 hover:bg-red-600 text-white"
+                >
                   <a
                     href="https://youtube.com/@TheFitBhaskar"
                     target="_blank"

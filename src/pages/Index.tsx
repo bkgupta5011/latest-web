@@ -14,27 +14,27 @@ import Layout from "@/components/Layout";
 
 const transformationTimeline = [
   {
-    year: "2024",
+    year: "Before June 2024",
     title: "The Beginning",
-    description: "Started my fitness journey at 85kg",
+    description: "Stuck at 92 kg",
   },
   {
-    year: "2021",
-    title: "Building Foundation",
-    description: "Learned proper form and nutrition basics",
+    year: "24 June 2024",
+    title: "Getting Started",
+    description: "Decided to - No Excuses, Bas Start Karna Hai",
   },
   {
-    year: "2022",
-    title: "Transformation",
+    year: "July - November 2024",
+    title: "Visible Changes",
     description: "Lost 20kg and gained lean muscle",
   },
   {
-    year: "2023",
-    title: "Sharing Knowledge",
-    description: "Started TheFitBhaskar to help others",
+    year: "2025",
+    title: "68 kg Milestone Achieved",
+    description: "Now focusing on muscle gain and strength",
   },
   {
-    year: "2024",
+    year: "2026 and Beyond",
     title: "Community Growth",
     description: "Building a fitness community together",
   },
@@ -83,6 +83,18 @@ const sections = [
     path: "/blog",
     color: "from-amber-500 to-yellow-500",
   },
+];
+
+const galleryImages = [
+  {
+    src: "/image-1.jpeg",
+    alt: "Gym progress - strength training",
+    span: "col-span-2 sm:col-span-3",
+    ratio: 16 / 9,
+  },
+  { src: "/image-2.jpeg", alt: "Morning workout routine", ratio: 4 / 5 },
+  { src: "/image-4.jpeg", alt: "Conditioning day snapshot", ratio: 4 / 5 },
+  { src: "/image-5.jpeg", alt: "Evening training session", ratio: 4 / 5 },
 ];
 
 const heroVideo = "/gym-clip.mp4";
@@ -159,42 +171,44 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Feature Video */}
+      {/* Feature Gallery */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
-            <div className="space-y-4 max-w-xl">
-              <h2 className="font-display text-4xl md:text-5xl leading-tight">
-                Train With Me <span className="text-gradient">Anywhere</span>
-              </h2>
-              <p className="text-muted-foreground text-lg">
-                Here is a quick look at my latest gym set. The clip is
-                lightweight and optimized to start instantly, even on slower
-                connections.
-              </p>
-              <p className="text-sm text-muted-foreground">
-                Autoplays muted, loops, and fits perfectly in a 9:16 frame so
-                you can see every rep without black bars.
-              </p>
-            </div>
+          <div className="max-w-4xl mx-auto text-center space-y-4">
+            <h2 className="font-display text-4xl md:text-5xl leading-tight">
+              Train With Me <span className="text-gradient">Anywhere</span>
+            </h2>
+            <p className="text-muted-foreground text-lg">
+              A glimpse from my recent sessions—strength, conditioning, and
+              recovery all in one place.
+            </p>
+          </div>
 
-            <div className="relative w-full max-w-[320px] mx-auto">
-              <div
-                className="absolute inset-0 rounded-[28px] bg-gradient-to-br from-primary/50 via-orange-500/40 to-amber-400/50 blur-2xl opacity-60"
-                aria-hidden
-              />
-              <div className="relative rounded-3xl border border-border bg-background/80 shadow-[0_20px_60px_rgba(0,0,0,0.25)] p-2">
-                <AspectRatio ratio={1}>
-                  <video
-                    src="/gym-video.mp4"
-                    className="h-full w-full rounded-2xl object-cover border border-border/80"
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    controls
-                  />
-                </AspectRatio>
+          <div className="relative w-full max-w-5xl mx-auto mt-10">
+            <div
+              className="absolute inset-0 rounded-[32px] bg-gradient-to-br from-primary/20 via-orange-500/15 to-amber-400/20 blur-3xl opacity-80"
+              aria-hidden
+            />
+            <div className="relative rounded-3xl bg-background/70 backdrop-blur-md shadow-[0_24px_80px_rgba(0,0,0,0.35)] p-3 sm:p-5">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
+                {galleryImages.map((image, index) => (
+                  <div
+                    key={image.src}
+                    className={`group relative overflow-hidden rounded-2xl shadow-lg sm:shadow-xl ${
+                      image.span ?? ""
+                    }`}
+                  >
+                    <AspectRatio ratio={image.ratio}>
+                      <img
+                        src={image.src}
+                        alt={image.alt}
+                        className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                        loading={index === 0 ? "eager" : "lazy"}
+                      />
+                    </AspectRatio>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-black/10 to-transparent pointer-events-none" />
+                  </div>
+                ))}
               </div>
             </div>
           </div>
